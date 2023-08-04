@@ -1,0 +1,5 @@
+PassengerJet,Boeing 747,614,8357,418000000
+PrivateJet,Pilatus PC-12,313,1742,4050000
+PrivateJet,Gulfstream g500,585,6674,45000000
+RemoteControlledJet,E-flite Tomcat Twin,30,6,299
+RemoteControlledJet,BobCat,200,30,3920
