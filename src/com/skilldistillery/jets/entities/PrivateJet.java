@@ -13,8 +13,7 @@ public class PrivateJet extends Jet implements FancyThings {
 
 	@Override
 	public void popChampagne() {
-		System.out.println("Popping champagne. Cheers!");
-		
+		System.out.println("Popping champagne. Cheers!");		
 	}
 
 

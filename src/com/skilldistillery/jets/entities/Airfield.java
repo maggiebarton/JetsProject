@@ -51,18 +51,31 @@ public class Airfield {
 	}
 
 	public void displayJets() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Display Fleet----\u2708   ");
+		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			System.out.println(jet);
 		}
 	}
 
 	public void flyAllJets() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Flying All Jets----\u2708 ");
+		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			jet.fly();
 		}
 	}
 
 	public void findFastedJet() {
+		
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Fastest Jet----\u2708");
+		System.out.println("---------------------------------");
 		double fastestSpeed = 0.0;
 		Jet fastestJet = null;
 		for (Jet jet : fleet) {
@@ -76,6 +89,10 @@ public class Airfield {
 	}
 
 	public void findLongestRange() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Longest Range----\u2708");
+		System.out.println("---------------------------------");
 		int longestRange = 0;
 		Jet longestRangeJet = null;
 		for (Jet jet : fleet) {
@@ -89,6 +106,10 @@ public class Airfield {
 	}
 
 	public void deployFancyThings() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Party with Celebrities----\u2708");
+		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			if (jet instanceof PrivateJet) {
 				//do fancy things
@@ -100,6 +121,10 @@ public class Airfield {
 	}
 	
 	public void deployBatteryOperated() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Change Batteries----\u2708");
+		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			if (jet instanceof RemoteControlledJet) {
 				//do battery operated things

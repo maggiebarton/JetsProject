@@ -8,8 +8,7 @@ public class RemoteControlledJet extends Jet implements BatteryOperated {
 
 	@Override
 	public void changeBatteries() {
-		System.out.println("Changing batteries in RC jet " + this.getModel() + "...");
-		System.out.println("Ready for takeoff!");
+		System.out.println("Changing batteries in RC jet" + this.getModel() + "...Ready for takeoff!");
 		
 	}
 

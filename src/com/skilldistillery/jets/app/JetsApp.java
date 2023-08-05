@@ -16,7 +16,11 @@ public class JetsApp {
 	}
 
 	public void run() {
-
+		//greet user
+		System.out.println("Welcome to the Jet App! ----\u2708");
+		System.out.println();
+		
+		//user interacts with main menu until they quit
 		do {
 			mainMenu();
 		} while (!quitMainMenu);
@@ -24,15 +28,20 @@ public class JetsApp {
 	}
 
 	private void mainMenu() {
-		System.out.println("1. List Fleet");
-		System.out.println("2. Fly All Jets");
-		System.out.println("3. View Fastest Jet");
-		System.out.println("4. View Jet with Longest Range");
-		System.out.println("5. Party with Celebrities");
-		System.out.println("6. Change batteries in RC Jets");
-		System.out.println("7. Add a Jet to the Fleet");
-		System.out.println("8. Remove a Jet from the Fleet");
-		System.out.println("9. Quit");
+		//unicode for a little plane -> \u2708
+		System.out.println("-----------------------------------------------");
+		System.out.println("-----------------\u2708 MAIN MENU \u2708-----------------");
+		System.out.println("-----------------------------------------------");
+		System.out.println("------\u2708	1. List Fleet                       ---");
+		System.out.println("------\u2708	2. Fly All Jets                     ---");
+		System.out.println("------\u2708	3. View Fastest Jet                 ---");
+		System.out.println("------\u2708	4. View Jet with Longest Range      ---");
+		System.out.println("------\u2708	5. Party with Celebrities           ---");
+		System.out.println("------\u2708	6. Change batteries in RC Jets      ---");
+		System.out.println("------\u2708	7. Add a Jet to the Fleet           ---");
+		System.out.println("------\u2708	8. Remove a Jet from the Fleet      ---");
+		System.out.println("------\u2708	9. Quit                             ---");
+		System.out.println("-----------------------------------------------");
 		System.out.print("Choose an option (1-9): ");
 		int userChoice = sc.nextInt();
 		sc.nextLine();
@@ -75,15 +84,18 @@ public class JetsApp {
 		case 7:
 			// add jet to fleet
 			promptUserToAddJet();
-			System.out.println("Your jet has been added to the fleet.");
+			System.out.println("Jet has been added to the fleet. Happy flying ----\u2708");
+			System.out.println();
 			break;
 		case 8:
 			// remove jet from fleet
 			promptUserToRemoveJet();
+			System.out.println("Jet has been removed from the fleet. ----\u2708");
+			System.out.println();
 			break;
 		case 9:
 			// quit
-			System.out.println("Thanks for using the Jet App. Goodbye!");
+			System.out.println("Thanks for using the Jet App. Goodbye! ----\u2708");
 			quitMainMenu = true;
 			break;
 
@@ -92,6 +104,10 @@ public class JetsApp {
 	}
 
 	private void promptUserToAddJet() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Add a New Jet----\u2708   ");
+		System.out.println("---------------------------------");
 		System.out.print("Enter the jet's model: ");
 		String model = sc.nextLine();
 		System.out.print("Enter the jet's speed (in MPH): ");
@@ -109,6 +125,10 @@ public class JetsApp {
 	}
 
 	private void promptUserToRemoveJet() {
+		System.out.println();
+		System.out.println("---------------------------------");
+		System.out.println("----Remove a Jet----\u2708    ");
+		System.out.println("---------------------------------");
 		// new display including index number so users have a numbered option to select
 		airfield.removeJetDisplay();
 		System.out.println("Which jet would you like to remove?");
