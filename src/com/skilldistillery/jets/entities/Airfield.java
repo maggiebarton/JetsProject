@@ -99,7 +99,7 @@ public class Airfield {
 		
 	}
 	
-	public void deploySwitchable() {
+	public void deployBatteryOperated() {
 		for (Jet jet : fleet) {
 			if (jet instanceof RemoteControlledJet) {
 				//do switchable things

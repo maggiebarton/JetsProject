@@ -16,15 +16,14 @@ public class JetsApp {
 	}
 
 	public void run() {
-		
+
 		do {
 			mainMenu();
 		} while (!quitMainMenu);
 
-
 	}
 
-	public void mainMenu() {
+	private void mainMenu() {
 		System.out.println("1. List Fleet");
 		System.out.println("2. Fly All Jets");
 		System.out.println("3. View Fastest Jet");
@@ -37,18 +36,18 @@ public class JetsApp {
 		System.out.print("Choose an option (1-9): ");
 		int userChoice = sc.nextInt();
 		sc.nextLine();
-		
+
 		mainMenuSwitch(userChoice);
 
 	}
 
-	public void mainMenuSwitch(int userChoice) {
+	private void mainMenuSwitch(int userChoice) {
 		switch (userChoice) {
 		default:
 			System.err.println("ERROR: Invalid Input. Choose an option or type 9 to quit.");
 			break;
 		case 1:
-			//display all jets
+			// display all jets
 			airfield.displayJets();
 			break;
 		case 2:
@@ -70,8 +69,8 @@ public class JetsApp {
 			airfield.deployFancyThings();
 			break;
 		case 6:
-			// power up all rc jets
-			airfield.deploySwitchable();
+			// change batteries in rc jets
+			airfield.deployBatteryOperated();
 			break;
 		case 7:
 			// add jet to fleet
@@ -86,6 +85,15 @@ public class JetsApp {
 			break;
 
 		}
+
+	}
+	
+	public void addJet() {
+		
+	}
+	
+	public void removeJet() {
+		
 	}
 
 }

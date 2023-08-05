@@ -1,6 +1,6 @@
 package com.skilldistillery.jets.entities;
 
-public interface Switchable {
+public interface BatteryOperated {
 	
 	public void changeBatteries();
 
