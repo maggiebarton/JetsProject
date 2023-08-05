@@ -6,6 +6,13 @@ public class RemoteControlledJet extends Jet implements Switchable {
 		super(model, speed, range, price);
 	}
 
+	@Override
+	public void changeBatteries() {
+		System.out.println("Changing batteries in RC jet " + this.getModel() + "...");
+		System.out.println("Ready for takeoff!");
+		
+	}
+
 
 
 }

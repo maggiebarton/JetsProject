@@ -16,11 +16,11 @@ public abstract class Jet {
 
 	public void fly() {
 		if (simpleName.equals("RemoteControlledJet")) {
-			System.out.println("The Jet " + simpleName + " Model: " + this.model + " is flying for "
+			System.out.println(simpleName + " Model: " + this.model + " is flying for "
 					+ getMinutesFlying(this.speed, this.range) + " minutes");
 		} else
 
-			System.out.println("The Jet " + simpleName + " Model: " + this.model + " is flying for "
+			System.out.println(simpleName + " Model: " + this.model + " is flying for "
 					+ getHoursFlying(this.speed, this.range) + " hours");
 	}
 
@@ -65,6 +65,14 @@ public abstract class Jet {
 
 	public void setModel(String model) {
 		this.model = model;
+	}
+
+	public String getSimpleName() {
+		return simpleName;
+	}
+
+	public void setSimpleName(String simpleName) {
+		this.simpleName = simpleName;
 	}
 
 

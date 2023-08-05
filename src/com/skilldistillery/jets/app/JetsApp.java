@@ -30,7 +30,7 @@ public class JetsApp {
 		System.out.println("3. View Fastest Jet");
 		System.out.println("4. View Jet with Longest Range");
 		System.out.println("5. Party with Celebrities");
-		System.out.println("6. Power Up RC Jets");
+		System.out.println("6. Change batteries in RC Jets");
 		System.out.println("7. Add a Jet to the Fleet");
 		System.out.println("8. Remove a Jet from the Fleet");
 		System.out.println("9. Quit");
@@ -67,9 +67,11 @@ public class JetsApp {
 			break;
 		case 5:
 			// party with celebs
+			airfield.deployFancyThings();
 			break;
 		case 6:
 			// power up all rc jets
+			airfield.deploySwitchable();
 			break;
 		case 7:
 			// add jet to fleet

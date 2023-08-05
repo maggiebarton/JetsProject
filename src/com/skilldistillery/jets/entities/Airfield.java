@@ -8,15 +8,16 @@ import java.util.List;
 
 public class Airfield {
 	private List<Jet> fleet = new ArrayList<>();
+	private String fileName = "jets.txt";
 
 	public Airfield() {
-		readJets();
+		readJets(fileName);
 
 	}
 
-	private void readJets() {
+	private void readJets(String fileName) {
 
-		try (BufferedReader bufIn = new BufferedReader(new FileReader("jets.txt"))) {
+		try (BufferedReader bufIn = new BufferedReader(new FileReader(fileName))) {
 			String line;
 			while ((line = bufIn.readLine()) != null) {
 				String[] split = line.split(",");
@@ -70,18 +71,40 @@ public class Airfield {
 				fastestJet = jet;
 			}
 		}
-		System.out.println("The fastest jet is: " + fastestJet.getModel() + " traveling " + fastestJet.getSpeed() + "MPH");
+		System.out.println(
+				"The fastest jet is: " + fastestJet.getModel() + " traveling " + fastestJet.getSpeed() + "MPH");
 	}
-	
+
 	public void findLongestRange() {
 		int longestRange = 0;
 		Jet longestRangeJet = null;
 		for (Jet jet : fleet) {
-			if ( longestRange < jet.getRange()) {
+			if (longestRange < jet.getRange()) {
 				longestRange = jet.getRange();
 				longestRangeJet = jet;
 			}
 		}
-		System.out.println("The jet with the longest range is : " + longestRangeJet.getModel() + " traveling " + longestRangeJet.getRange() + " miles");
+		System.out.println("The jet with the longest range is : " + longestRangeJet.getModel() + " traveling "
+				+ longestRangeJet.getRange() + " miles");
+	}
+
+	public void deployFancyThings() {
+		for (Jet jet : fleet) {
+			if (jet instanceof PrivateJet) {
+				//do fancy things
+				((PrivateJet) jet).loadCelebrities();
+				((PrivateJet) jet).popChampagne();
+			}
+		}
+		
+	}
+	
+	public void deploySwitchable() {
+		for (Jet jet : fleet) {
+			if (jet instanceof RemoteControlledJet) {
+				//do switchable things
+				((RemoteControlledJet) jet).changeBatteries();
+			}
+		}
 	}
 }

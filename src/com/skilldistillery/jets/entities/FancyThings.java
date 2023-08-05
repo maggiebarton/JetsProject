@@ -6,6 +6,5 @@ public interface FancyThings {
 		
 	public void popChampagne();
 	
-	
 
 }
