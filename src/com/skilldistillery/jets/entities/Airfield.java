@@ -114,8 +114,17 @@ public class Airfield {
 		
 	}
 	
-	public void removeJet() {
+	public void removeJetDisplay() {
+		for (int i = 0; i <= fleet.size() - 1; i++) {
+			System.out.println("Choose option '" + i + "' to remove:");
+			System.out.println(fleet.get(i));
+		}
 		
 	}
+	
+	public void removeJet(int i) {
+		fleet.remove(i);
+	}
+	
 
 }

@@ -90,28 +90,33 @@ public class JetsApp {
 		}
 
 	}
-	
+
 	private void promptUserToAddJet() {
 		System.out.print("Enter the jet's model: ");
 		String model = sc.nextLine();
 		System.out.print("Enter the jet's speed (in MPH): ");
 		double speed = sc.nextDouble();
-		sc.nextLine(); //flush
+		sc.nextLine(); // flush
 		System.out.print("Enter the jet's range: ");
 		int range = sc.nextInt();
-		sc.nextLine(); //flush
+		sc.nextLine(); // flush
 		System.out.print("Enter the jet's purchase price: ");
 		long purchasePrice = sc.nextLong();
-		sc.nextLine(); //flush
-		
-		
+		sc.nextLine(); // flush
+
 		airfield.addJet(model, speed, range, purchasePrice);
-		
+
 	}
-	
-	public void promptUserToRemoveJet() {
+
+	private void promptUserToRemoveJet() {
+		// new display including index number so users have a numbered option to select
+		airfield.removeJetDisplay();
 		System.out.println("Which jet would you like to remove?");
+
+		int userChoice = sc.nextInt();
+		sc.nextLine(); // flush
+
+		airfield.removeJet(userChoice);
 	}
-	
 
 }
