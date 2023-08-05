@@ -102,9 +102,20 @@ public class Airfield {
 	public void deployBatteryOperated() {
 		for (Jet jet : fleet) {
 			if (jet instanceof RemoteControlledJet) {
-				//do switchable things
+				//do battery operated things
 				((RemoteControlledJet) jet).changeBatteries();
 			}
 		}
 	}
+	
+	public void addJet (String model, double speed, int range, long purchasePrice) {
+		Jet newJet = new PassengerJet(model, speed, range, purchasePrice);
+		fleet.add(newJet);
+		
+	}
+	
+	public void removeJet() {
+		
+	}
+
 }

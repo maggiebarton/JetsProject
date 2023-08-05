@@ -74,9 +74,12 @@ public class JetsApp {
 			break;
 		case 7:
 			// add jet to fleet
+			promptUserToAddJet();
+			System.out.println("Your jet has been added to the fleet.");
 			break;
 		case 8:
 			// remove jet from fleet
+			promptUserToRemoveJet();
 			break;
 		case 9:
 			// quit
@@ -88,12 +91,27 @@ public class JetsApp {
 
 	}
 	
-	public void addJet() {
+	private void promptUserToAddJet() {
+		System.out.print("Enter the jet's model: ");
+		String model = sc.nextLine();
+		System.out.print("Enter the jet's speed (in MPH): ");
+		double speed = sc.nextDouble();
+		sc.nextLine(); //flush
+		System.out.print("Enter the jet's range: ");
+		int range = sc.nextInt();
+		sc.nextLine(); //flush
+		System.out.print("Enter the jet's purchase price: ");
+		long purchasePrice = sc.nextLong();
+		sc.nextLine(); //flush
+		
+		
+		airfield.addJet(model, speed, range, purchasePrice);
 		
 	}
 	
-	public void removeJet() {
-		
+	public void promptUserToRemoveJet() {
+		System.out.println("Which jet would you like to remove?");
 	}
+	
 
 }
