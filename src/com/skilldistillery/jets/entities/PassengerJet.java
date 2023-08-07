@@ -6,6 +6,4 @@ public class PassengerJet extends Jet {
 		super(model, speed, range, price);
 	}
 
-
-
 }

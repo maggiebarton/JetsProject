@@ -71,7 +71,7 @@ public class Airfield {
 	}
 
 	public void findFastedJet() {
-		
+
 		System.out.println();
 		System.out.println("---------------------------------");
 		System.out.println("----Fastest Jet----\u2708");
@@ -84,8 +84,8 @@ public class Airfield {
 				fastestJet = jet;
 			}
 		}
-		System.out.println(
-				"The fastest jet is: " + fastestJet.getModel() + " traveling " + fastestJet.getSpeed() + "MPH");
+		System.out.println("The fastest jet is: " + fastestJet.getSimpleName() + " " + fastestJet.getModel()
+				+ " traveling " + fastestJet.getSpeed() + "MPH");
 	}
 
 	public void findLongestRange() {
@@ -112,14 +112,14 @@ public class Airfield {
 		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			if (jet instanceof PrivateJet) {
-				//do fancy things
-				((PrivateJet) jet).loadCelebrities();
-				((PrivateJet) jet).popChampagne();
+				// do fancy things
+				((PrivateJet) jet).clientele();
+				((PrivateJet) jet).service();
 			}
 		}
-		
+
 	}
-	
+
 	public void deployBatteryOperated() {
 		System.out.println();
 		System.out.println("---------------------------------");
@@ -127,29 +127,45 @@ public class Airfield {
 		System.out.println("---------------------------------");
 		for (Jet jet : fleet) {
 			if (jet instanceof RemoteControlledJet) {
-				//do battery operated things
+				// do battery operated things
 				((RemoteControlledJet) jet).changeBatteries();
 			}
 		}
 	}
-	
-	public void addJet (String model, double speed, int range, long purchasePrice) {
-		Jet newJet = new PassengerJet(model, speed, range, purchasePrice);
-		fleet.add(newJet);
-		
+
+	public void addJet(int userChoice, String model, double speed, int range, long purchasePrice) {
+		if (userChoice == 1) {
+			Jet newPassengerJet = new PassengerJet(model, speed, range, purchasePrice);
+			fleet.add(newPassengerJet);
+			System.out.println("Jet has been added to the fleet. Happy flying ----\u2708");
+
+		} else if (userChoice == 2) {
+			Jet newPrivateJet = new PrivateJet(model, speed, range, purchasePrice);
+			fleet.add(newPrivateJet);
+			System.out.println("Jet has been added to the fleet. Happy flying ----\u2708");
+
+		} else if (userChoice == 3) {
+			Jet newRCJet = new RemoteControlledJet(model, speed, range, purchasePrice);
+			fleet.add(newRCJet);
+			System.out.println("Jet has been added to the fleet. Happy flying ----\u2708");
+
+		} else {
+			System.err.println("Invalid Jet Type. Please try again.");
+		}
+
 	}
-	
+
 	public void removeJetDisplay() {
 		for (int i = 0; i <= fleet.size() - 1; i++) {
 			System.out.println("Choose option '" + i + "' to remove:");
 			System.out.println(fleet.get(i));
 		}
-		
+
 	}
-	
+
 	public void removeJet(int i) {
+
 		fleet.remove(i);
 	}
-	
 
 }

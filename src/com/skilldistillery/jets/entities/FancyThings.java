@@ -2,9 +2,9 @@ package com.skilldistillery.jets.entities;
 
 public interface FancyThings {
 	
-	public void loadCelebrities ();
+	public void clientele();
 		
-	public void popChampagne();
+	public void service();
 	
 
 }

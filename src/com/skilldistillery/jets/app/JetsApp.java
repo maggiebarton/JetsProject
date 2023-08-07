@@ -2,7 +2,7 @@ package com.skilldistillery.jets.app;
 
 import java.util.Scanner;
 
-import com.skilldistillery.jets.entities.*;
+import com.skilldistillery.jets.entities.Airfield;
 
 public class JetsApp {
 	private Airfield airfield = new Airfield();
@@ -16,11 +16,11 @@ public class JetsApp {
 	}
 
 	public void run() {
-		//greet user
+		// greet user
 		System.out.println("Welcome to the Jet App! ----\u2708");
 		System.out.println();
-		
-		//user interacts with main menu until they quit
+
+		// user interacts with main menu until they quit
 		do {
 			mainMenu();
 		} while (!quitMainMenu);
@@ -28,7 +28,7 @@ public class JetsApp {
 	}
 
 	private void mainMenu() {
-		//unicode for a little plane -> \u2708
+		// unicode for a little plane -> \u2708
 		System.out.println("-----------------------------------------------");
 		System.out.println("-----------------\u2708 MAIN MENU \u2708-----------------");
 		System.out.println("-----------------------------------------------");
@@ -84,14 +84,11 @@ public class JetsApp {
 		case 7:
 			// add jet to fleet
 			promptUserToAddJet();
-			System.out.println("Jet has been added to the fleet. Happy flying ----\u2708");
-			System.out.println();
 			break;
 		case 8:
 			// remove jet from fleet
 			promptUserToRemoveJet();
-			System.out.println("Jet has been removed from the fleet. ----\u2708");
-			System.out.println();
+//			System.out.println("Jet has been removed from the fleet. ----\u2708");
 			break;
 		case 9:
 			// quit
@@ -108,6 +105,16 @@ public class JetsApp {
 		System.out.println("---------------------------------");
 		System.out.println("----Add a New Jet----\u2708   ");
 		System.out.println("---------------------------------");
+		System.out.println("Which type of jet would you like to add?");
+		System.out.println("----------------------------------------------");
+		System.out.println("------\u2708	1. Passenger Jet                   ---");
+		System.out.println("------\u2708	2. Private Jet                     ---");
+		System.out.println("------\u2708	3. Remote Controlled Jet           ---");
+		System.out.println("----------------------------------------------");
+		System.out.print("Choose an option (1-3): ");
+		int userChoice = sc.nextInt();
+		sc.nextLine(); // flush
+
 		System.out.print("Enter the jet's model: ");
 		String model = sc.nextLine();
 		System.out.print("Enter the jet's speed (in MPH): ");
@@ -120,23 +127,32 @@ public class JetsApp {
 		long purchasePrice = sc.nextLong();
 		sc.nextLine(); // flush
 
-		airfield.addJet(model, speed, range, purchasePrice);
+		airfield.addJet(userChoice, model, speed, range, purchasePrice);
 
 	}
 
 	private void promptUserToRemoveJet() {
-		System.out.println();
-		System.out.println("---------------------------------");
-		System.out.println("----Remove a Jet----\u2708    ");
-		System.out.println("---------------------------------");
-		// new display including index number so users have a numbered option to select
-		airfield.removeJetDisplay();
-		System.out.println("Which jet would you like to remove?");
+		try {
+			System.out.println();
+			System.out.println("---------------------------------");
+			System.out.println("----Remove a Jet----\u2708    ");
+			System.out.println("---------------------------------");
+			// new display including index number so users have a numbered option to select
+			airfield.removeJetDisplay();
+			System.out.print("Which jet would you like to remove? Enter option number: ");
 
-		int userChoice = sc.nextInt();
-		sc.nextLine(); // flush
+			int userChoice = sc.nextInt();
+			sc.nextLine(); // flush
 
-		airfield.removeJet(userChoice);
+			airfield.removeJet(userChoice);
+			System.out.println("Jet has been removed from the fleet. ----\u2708");
+
+
+		} catch (IndexOutOfBoundsException e) {
+			System.err.println("Invalid Option Number. Please try again.");
+			System.out.println();
+
+		}
 	}
 
 }

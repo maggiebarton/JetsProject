@@ -7,15 +7,13 @@ public class PrivateJet extends Jet implements FancyThings {
 	}
 
 	@Override
-	public void loadCelebrities() {
+	public void clientele() {
 		System.out.println("Loading celebrities onto private jet " + this.getModel() + "...");
 	}
 
 	@Override
-	public void popChampagne() {
-		System.out.println("Popping champagne. Cheers!");		
+	public void service() {
+		System.out.println("Popping champagne. Cheers!");
 	}
-
-
 
 }
